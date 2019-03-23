@@ -1,4 +1,4 @@
-import { Component, NgModule, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Bus } from '../bus';
 import { data } from '../../assets/bus-services-data.json';
 
