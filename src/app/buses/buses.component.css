@@ -1,0 +1,13 @@
+ul#bus-report {
+  list-style: none;
+  padding-left: 0;
+  border-top: 1px solid grey;
+}
+
+ul#bus-report li {
+  border-bottom: 1px solid grey;
+}
+
+thead {
+  background-color: lightblue;
+}
