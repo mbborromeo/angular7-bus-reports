@@ -1,5 +1,5 @@
 
-<mat-accordion>
+<mat-accordion *ngIf="buses.length">
   <ul id="bus-report">
     <li *ngFor="let b of buses">
       <mat-expansion-panel>
@@ -7,12 +7,12 @@
           <h2>{{ b.organisation }} - {{ b.date }}</h2>
         </mat-expansion-panel-header>
 
-        <table>
+        <table *ngIf="b.busData.length">
           <thead>
             <tr>
-              <th>Bus ID</th>
-              <th>Route Variant</th>
-              <th>Status</th>
+              <th class="busId">Bus ID</th>
+              <th class="route">Route Variant</th>
+              <th class="status">Status</th>
             </tr>
           </thead>
           <tbody>

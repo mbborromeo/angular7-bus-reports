@@ -35,6 +35,18 @@ ul#bus-report table thead tr {
   background-color: lightblue;
 }
 
+ul#bus-report table th.busId {
+  width: 25%;
+}
+
+ul#bus-report table th.route {
+  width: 50%;
+}
+
+ul#bus-report table th.status {
+  width: 25%;
+}
+
 .early {
   color: red;
 }
