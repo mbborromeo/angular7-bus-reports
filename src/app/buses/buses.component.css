@@ -1,7 +1,6 @@
 ul#bus-report {
   list-style: none;
   padding-left: 0;
-  /*border-top: 1px solid grey;*/
   font-family: "Arial";
 }
 
@@ -11,13 +10,11 @@ ul#bus-report h2 {
 }
 
 ul#bus-report li {
-  /*border-bottom: 1px solid grey;*/
   margin-bottom: 3px;
 }
 
 .mat-expansion-panel {
-  background-color: white; /*#F1F1F1*/
-  /*border-radius: 0;*/
+  background-color: white;
   border: 1px solid grey;
 }
 
@@ -37,14 +34,6 @@ ul#bus-report table tr {
 ul#bus-report table thead tr {
   background-color: lightblue;
 }
-
-.mat-expansion-panel-header {
-  /*padding-left: 0;*/
-}
-
-/*.mat-expansion-panel .mat-expansion-panel-content .mat-expansion-panel-body {
-  padding: 0;
-}*/
 
 .early {
   color: red;
