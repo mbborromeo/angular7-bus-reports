@@ -19,7 +19,12 @@
             <tr *ngFor="let bd of b.busData">
               <td>{{ bd.busId }}</td>
               <td>{{ bd.routeVariant }}</td>
-              <td>{{ bd.deviationFromTimetable }}</td>
+              <td>
+                <span *ngIf="bd.deviationFromTimetable < 0" class="early">Early</span>
+                <span *ngIf="bd.deviationFromTimetable >= 0 && bd.deviationFromTimetable < 300 && bd.deviationFromTimetable != null" class="onTime">On Time</span>
+                <span *ngIf="bd.deviationFromTimetable > 300" class="late">Late</span>
+                <span *ngIf="bd.deviationFromTimetable == null" class="unknown">Unknown</span>
+              </td>
             </tr>
           </tbody>
         </table>

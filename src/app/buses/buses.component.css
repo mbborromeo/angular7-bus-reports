@@ -45,3 +45,19 @@ ul#bus-report table thead tr {
 /*.mat-expansion-panel .mat-expansion-panel-content .mat-expansion-panel-body {
   padding: 0;
 }*/
+
+.early {
+  color: red;
+}
+
+.onTime {
+  color: green;
+}
+
+.late {
+  color: blue;
+}
+
+.unknown {
+  color: grey;
+}
