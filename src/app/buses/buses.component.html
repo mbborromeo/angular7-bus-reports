@@ -1,6 +1,23 @@
-<h2>{{ bus.organisation }} details</h2>
 
-<div><span>date: </span>{{ bus.date }}</div>
-<div><span>id: </span>{{ bus.id }}</div>
-<div><span>routeVariant: </span>{{ bus.routeVariant }}</div>
-<div><span>deviationFromTimetable: </span>{{ bus.deviationFromTimetable }}</div>
+<ul>
+  <li *ngFor="let b of buses">
+      {{ b.organisation }} - {{ b.date }}
+
+      <table>
+        <thead>
+          <tr>
+            <th>Bus ID</th>
+            <th>Route Variant</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let bd of b.busData">
+            <td>{{ bd.busId }}</td>
+            <td>{{ bd.routeVariant }}</td>
+            <td>{{ bd.deviationFromTimetable }}</td>
+          </tr>
+        </tbody>
+      </table>
+  </li>
+</ul>

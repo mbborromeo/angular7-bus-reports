@@ -1,7 +1,8 @@
 export class Bus {
   organisation: string;
   date: string;
-  id: number;
-  routeVariant: string;
-  deviationFromTimetable: number;
+  busData: {}[]; // Array of objects
+  // id: number;
+  // routeVariant: string;
+  // deviationFromTimetable: number;
 }

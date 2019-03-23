@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { data } from '../assets/bus-services-data.json';
 
 @Component({
   selector: 'app-root',
@@ -9,5 +8,4 @@ import { data } from '../assets/bus-services-data.json';
 
 export class AppComponent {
   title = 'Bus Reports';
-  data = data;
 }
