@@ -1,7 +1,11 @@
 
+<mat-accordion>
 <ul>
   <li *ngFor="let b of buses">
-      {{ b.organisation }} - {{ b.date }}
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        {{ b.organisation }} - {{ b.date }}
+      </mat-expansion-panel-header>
 
       <table>
         <thead>
@@ -19,5 +23,7 @@
           </tr>
         </tbody>
       </table>
+    </mat-expansion-panel>
   </li>
 </ul>
+</mat-accordion>
