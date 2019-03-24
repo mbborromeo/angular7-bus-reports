@@ -26,6 +26,10 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
 
-## Assumptions in solution
+## Assumptions made
 
 For a list of assumptions I based my solution on, please refer to the assumptions.txt file.
+
+## Dependencies used
+
+This app was built in Angular 7.2.  I used Angular Material, Angular CDK, and Angular Animations for material design components such as the Accordion Expansion Panel.  This may require HammerJS for gesture support, so I have installed this as well.
