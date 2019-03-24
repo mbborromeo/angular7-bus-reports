@@ -1,5 +1,5 @@
 export class BusDetail {
-  id: number;
+  busId: number;
   routeVariant: string;
   deviationFromTimetable: number;
 }
