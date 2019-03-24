@@ -1,16 +1,30 @@
-
-<mat-accordion *ngIf="buses.length">
-  <ul id="bus-report">
-    <li *ngFor="let b of buses">
-      <mat-expansion-panel>
-        <mat-expansion-panel-header>
-          <h2>{{ b.organisation }} - {{ b.date }}</h2>
-        </mat-expansion-panel-header>
-
-        <div *ngIf="b.busData.length">
-          <app-bus-detail [busDataArray]="b.busData"></app-bus-detail>
-        </div>
-      </mat-expansion-panel>
-    </li>
-  </ul>
-</mat-accordion>
+<table>
+  <thead>
+    <tr>
+      <th class="busId">Bus ID</th>
+      <th class="route">Route Variant</th>
+      <th class="status">Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let b of busesWithinOrganisation">
+      <td>{{ b.busId }}</td>
+      <td>
+        <span *ngIf="b.routeVariant==='UNKNOWN'">
+          {{ b.routeVariant }}
+        </span>
+        <span *ngIf="b.routeVariant!='UNKNOWN'">
+          <b>{{ b.routeVariant | slice:0:3 }}</b>
+          {{ b.routeVariant | slice:4:5 }}
+          {{ b.routeVariant | slice:6:7 }}
+        </span>
+      </td>
+      <td>
+        <span *ngIf="b.deviationFromTimetable < 0" class="early">Early</span>
+        <span *ngIf="b.deviationFromTimetable >= 0 && b.deviationFromTimetable <= 300 && b.deviationFromTimetable != null" class="onTime">On Time</span>
+        <span *ngIf="b.deviationFromTimetable > 300" class="late">Late</span>
+        <span *ngIf="b.deviationFromTimetable == null" class="unknown">Unknown</span>
+      </td>
+    </tr>
+  </tbody>
+</table>
