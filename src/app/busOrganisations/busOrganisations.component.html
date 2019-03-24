@@ -7,9 +7,7 @@
           <h2>{{ bo.organisation }} - {{ bo.date }}</h2>
         </mat-expansion-panel-header>
 
-        <div *ngIf="bo.busData.length">
-          <app-buses [busesWithinOrganisation]="bo.busData"></app-buses>
-        </div>
+        <app-buses [busesWithinOrganisation]="bo.busData"></app-buses>
       </mat-expansion-panel>
     </li>
   </ul>
