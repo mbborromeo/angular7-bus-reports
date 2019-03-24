@@ -5,14 +5,14 @@ import { MatExpansionModule } from '@angular/material/expansion';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { BusOrganisationsComponent } from './busOrganisations/busOrganisations.component';
 import { BusesComponent } from './buses/buses.component';
-import { BusDetailComponent } from './bus-detail/bus-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    BusesComponent,
-    BusDetailComponent
+    BusOrganisationsComponent,
+    BusesComponent
   ],
   imports: [
     BrowserModule,
