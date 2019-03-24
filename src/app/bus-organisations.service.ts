@@ -11,9 +11,6 @@ export class BusOrganisationsService {
 
   constructor() { }
 
-  // getBusOrganisations(): BusOrganisation[] {
-  //   return BUSORGANISATIONS;
-  // }
   getBusOrganisations(): Observable<BusOrganisation[]> {
     return of(BUSORGANISATIONS);
   }

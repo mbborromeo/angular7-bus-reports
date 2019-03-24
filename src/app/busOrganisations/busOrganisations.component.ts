@@ -14,7 +14,6 @@ export class BusOrganisationsComponent implements OnInit {
   constructor(private busOrganisationsService: BusOrganisationsService) { }
 
   getBusOrganisations(): void {
-    //this.busOrganisations = this.busOrganisationsService.getBusOrganisations();
     this.busOrganisationsService.getBusOrganisations()
       .subscribe( busOrganisations => this.busOrganisations = busOrganisations );
   }
