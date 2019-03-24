@@ -1,6 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-//import { BusDetail } from '../bus-detail';
-import { Bus } from '../bus';
+import { BusDetail } from '../bus-detail';
 
 @Component({
   selector: 'app-bus-detail',
@@ -8,12 +7,11 @@ import { Bus } from '../bus';
   styleUrls: ['./bus-detail.component.css']
 })
 export class BusDetailComponent implements OnInit {
-  //@Input() busDetail: BusDetail;
-  @Input() busOrganisation: Bus;
+  @Input() busDataArray: BusDetail[];
 
   constructor() { }
 
   ngOnInit() {
-  }
 
+  }
 }

@@ -7,7 +7,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let bd of busOrganisation.busData">
+    <tr *ngFor="let bd of busDataArray">
       <td>{{ bd.busId }}</td>
       <td>
         <span *ngIf="bd.routeVariant==='UNKNOWN'">
