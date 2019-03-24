@@ -1,5 +1,5 @@
 Status value rendered in HTML is based on the following:
 "Early": <0
-"On Time": >=0 && <300 
+"On Time": >=0 && <=300
 "Late": >300
 "Unknown": null
