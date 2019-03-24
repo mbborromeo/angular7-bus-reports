@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { BUSORGANISATIONS } from '../mock-busOrganisations';
+import { BusOrganisation } from '../busOrganisation';
+import { BusOrganisationsService } from '../bus-organisations.service';
 
 @Component({
   selector: 'app-busOrganisations',
@@ -8,11 +9,15 @@ import { BUSORGANISATIONS } from '../mock-busOrganisations';
 })
 
 export class BusOrganisationsComponent implements OnInit {
-  busOrganisations = BUSORGANISATIONS;
+  busOrganisations: BusOrganisation[];
 
-  constructor() { }
+  constructor(private busOrganisationsService: BusOrganisationsService) { }
+
+  getBusOrganisations(): void {
+    this.busOrganisations = this.busOrganisationsService.getBusOrganisations();
+  }
 
   ngOnInit() {
-
+    this.getBusOrganisations();
   }
 }
