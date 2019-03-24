@@ -8,7 +8,7 @@
         </mat-expansion-panel-header>
 
         <div *ngIf="b.busData.length">
-          <app-bus-detail [busOrganisation]="b"></app-bus-detail>
+          <app-bus-detail [busDataArray]="b.busData"></app-bus-detail>
         </div>
       </mat-expansion-panel>
     </li>
