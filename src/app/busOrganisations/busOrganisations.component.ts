@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { BusOrganisation } from '../busOrganisation';
-import { data } from '../../assets/bus-services-data.json';
+import { BUSORGANISATIONS } from '../mock-busOrganisations';
 
 @Component({
   selector: 'app-busOrganisations',
@@ -9,7 +8,7 @@ import { data } from '../../assets/bus-services-data.json';
 })
 
 export class BusOrganisationsComponent implements OnInit {
-  busOrganisations: BusOrganisation[] = data;
+  busOrganisations = BUSORGANISATIONS;
 
   constructor() { }
 
