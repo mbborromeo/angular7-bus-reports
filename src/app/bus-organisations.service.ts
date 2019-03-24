@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Observable, of } from 'rxjs';
 import { BusOrganisation } from './busOrganisation';
 import { BUSORGANISATIONS } from './mock-busOrganisations';
 
@@ -10,7 +11,10 @@ export class BusOrganisationsService {
 
   constructor() { }
 
-  getBusOrganisations(): BusOrganisation[] {
-    return BUSORGANISATIONS;
+  // getBusOrganisations(): BusOrganisation[] {
+  //   return BUSORGANISATIONS;
+  // }
+  getBusOrganisations(): Observable<BusOrganisation[]> {
+    return of(BUSORGANISATIONS);
   }
 }
