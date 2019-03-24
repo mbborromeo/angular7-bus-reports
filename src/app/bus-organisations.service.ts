@@ -11,6 +11,7 @@ export class BusOrganisationsService {
 
   constructor() { }
 
+  //cater for asynchronous download of JSON if from a Remote server
   getBusOrganisations(): Observable<BusOrganisation[]> {
     return of(BUSORGANISATIONS);
   }

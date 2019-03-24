@@ -13,6 +13,7 @@ export class BusOrganisationsComponent implements OnInit {
 
   constructor(private busOrganisationsService: BusOrganisationsService) { }
 
+  //cater for asynchronous download of JSON if from a Remote server
   getBusOrganisations(): void {
     this.busOrganisationsService.getBusOrganisations()
       .subscribe( busOrganisations => this.busOrganisations = busOrganisations );
