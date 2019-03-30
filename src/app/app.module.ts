@@ -11,13 +11,15 @@ import { AppComponent } from './app.component';
 import { BusOrganisationsComponent } from './busOrganisations/busOrganisations.component';
 import { BusesComponent } from './buses/buses.component';
 import { MessagesComponent } from './messages/messages.component';
+import { DataComponent } from './data/data.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BusOrganisationsComponent,
     BusesComponent,
-    MessagesComponent
+    MessagesComponent,
+    DataComponent
   ],
   imports: [
     BrowserModule,
@@ -25,9 +27,11 @@ import { MessagesComponent } from './messages/messages.component';
     // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
     // and returns simulated server responses.
     // Remove it when a real server is ready to receive requests.
+    /*
     HttpClientInMemoryWebApiModule.forRoot(
       InMemoryDataService, { dataEncapsulation: false }
     ),
+    */
     AppRoutingModule,
     BrowserAnimationsModule,
     MatExpansionModule

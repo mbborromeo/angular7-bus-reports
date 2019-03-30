@@ -1,10 +1,15 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http'; //, HttpHeaders
+import { HttpClient, HttpResponse } from '@angular/common/http'; //, HttpHeaders, HttpErrorResponse
 import { Observable, of } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
 import { BusOrganisation } from './busOrganisation';
 //import { BUSORGANISATIONS } from './mock-busOrganisations';
 import { MessageService } from './message.service';
+
+export interface JsonFile {
+  //data: {}[];
+  data: BusOrganisation[];
+}
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +19,8 @@ export class BusOrganisationsService {
 
   //URL to web api: Define the heroesUrl of the form :base/:collectionName with the address of the busOrganisations resource on the server.
   //Here base is the resource to which requests are made, and collectionName is the busOrganisations data object in the in-memory-data-service.ts.
-  private busOrganisationsUrl = 'api/busOrganisations';
+  //private busOrganisationsUrl = 'api/busOrganisations';
+  private jsonUrl = '../assets/bus-services-data.json';
 
   constructor(
     private http: HttpClient,
@@ -23,16 +29,57 @@ export class BusOrganisationsService {
 
   //cater for asynchronous download of JSON if from a Remote server
   //using Http GET
-  getBusOrganisations(): Observable<BusOrganisation[]> {
+  //getBusOrganisations(): Observable<BusOrganisation[]> {
+  /*
+  getBusOrganisations(): Observable<JsonFile> {
     // TODO: send the message _after_ fetching the heroes
     // this.messageService.add('BusOrganisationsService: fetched BUSORGANISATIONS');
     // return of(BUSORGANISATIONS);
-    return this.http.get<BusOrganisation[]>(this.busOrganisationsUrl)
+    console.log("bus-organisations.service.ts");
+    //return this.http.get<BusOrganisation[]>(this.jsonUrl) //this.busOrganisationsUrl
+    return this.http.get<JsonFile>(this.jsonUrl)
       .pipe(
         tap(_ => this.log('fetched business organisations')),
-        catchError(this.handleError<BusOrganisation[]>('getBusOrganisations', []))
+        //catchError(this.handleError<BusOrganisation[]>('getBusOrganisations', []))
+        catchError(this.handleError<JsonFile>('getBusOrganisations', {}[]))
       );
   }
+  */
+
+  /*
+  getBusOrganisations(): Observable<JsonFile> {
+   //getBusOrganisations() {
+    console.log("bus-organisations.service.ts: getBusOrganisations()");
+    debugger;
+    //return this.http.get<JsonFile>( this.jsonUrl );
+
+    return this.http.get<JsonFile>(this.jsonUrl) //http.get() returns an Observable
+      .pipe(
+        //map(this.extractData),
+        tap(_ => this.log('fetched business organisations')),
+        //catchError(this.handleError<BusOrganisation[]>('getBusOrganisations', []))
+        catchError(this.handleError<JsonFile>('getBusOrganisations', {
+          data: []
+        } ))
+      );
+
+    // return this.http.get(this.jsonUrl)
+    //   .map(this.extractData)
+    //     .catchError(this.handleError);
+  }
+  */
+
+  getBusOrganisationsResponse(): Observable<HttpResponse<JsonFile>> {
+    return this.http.get<JsonFile>(
+      this.jsonUrl, { observe: 'response' });
+  }
+
+  /*
+  private extractData(res: Response) {//Response object is returned from http.get()
+    let body = res.json();
+    return body;
+  }
+  */
 
   /**
    * Handle Http operation that failed.
