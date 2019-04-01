@@ -3,15 +3,14 @@ import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { HttpClientModule } from '@angular/common/http';
-import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { InMemoryDataService }  from './in-memory-data.service';
+//import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+//import { InMemoryDataService }  from './in-memory-data.service';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BusOrganisationsComponent } from './busOrganisations/busOrganisations.component';
 import { BusesComponent } from './buses/buses.component';
 import { MessagesComponent } from './messages/messages.component';
-//import { DataComponent } from './data/data.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +18,6 @@ import { MessagesComponent } from './messages/messages.component';
     BusOrganisationsComponent,
     BusesComponent,
     MessagesComponent
-    //DataComponent
   ],
   imports: [
     BrowserModule,
