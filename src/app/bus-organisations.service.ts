@@ -1,14 +1,13 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpResponse } from '@angular/common/http'; //, HttpHeaders, HttpErrorResponse
-import { Observable, of } from 'rxjs';
-import { catchError, map, tap } from 'rxjs/operators';
+import { HttpClient, HttpResponse, HttpErrorResponse } from '@angular/common/http'; //, HttpHeaders
+import { Observable, of, throwError } from 'rxjs';
+import { catchError, map, tap, retry } from 'rxjs/operators';
 import { BusOrganisation } from './busOrganisation';
 //import { BUSORGANISATIONS } from './mock-busOrganisations';
 import { MessageService } from './message.service';
 
 export interface JsonFile {
-  //data: {}[];
-  data: BusOrganisation[];
+  data: BusOrganisation[]; //data: {}[];
 }
 
 @Injectable({
@@ -29,57 +28,17 @@ export class BusOrganisationsService {
 
   //cater for asynchronous download of JSON if from a Remote server
   //using Http GET
-  //getBusOrganisations(): Observable<BusOrganisation[]> {
-  /*
-  getBusOrganisations(): Observable<JsonFile> {
-    // TODO: send the message _after_ fetching the heroes
-    // this.messageService.add('BusOrganisationsService: fetched BUSORGANISATIONS');
-    // return of(BUSORGANISATIONS);
-    console.log("bus-organisations.service.ts");
-    //return this.http.get<BusOrganisation[]>(this.jsonUrl) //this.busOrganisationsUrl
-    return this.http.get<JsonFile>(this.jsonUrl)
-      .pipe(
-        tap(_ => this.log('fetched business organisations')),
-        //catchError(this.handleError<BusOrganisation[]>('getBusOrganisations', []))
-        catchError(this.handleError<JsonFile>('getBusOrganisations', {}[]))
-      );
-  }
-  */
-
-  /*
-  getBusOrganisations(): Observable<JsonFile> {
-   //getBusOrganisations() {
-    console.log("bus-organisations.service.ts: getBusOrganisations()");
-    debugger;
-    //return this.http.get<JsonFile>( this.jsonUrl );
-
-    return this.http.get<JsonFile>(this.jsonUrl) //http.get() returns an Observable
-      .pipe(
-        //map(this.extractData),
-        tap(_ => this.log('fetched business organisations')),
-        //catchError(this.handleError<BusOrganisation[]>('getBusOrganisations', []))
-        catchError(this.handleError<JsonFile>('getBusOrganisations', {
-          data: []
-        } ))
-      );
-
-    // return this.http.get(this.jsonUrl)
-    //   .map(this.extractData)
-    //     .catchError(this.handleError);
-  }
-  */
-
   getBusOrganisationsResponse(): Observable<HttpResponse<JsonFile>> {
     return this.http.get<JsonFile>(
-      this.jsonUrl, { observe: 'response' });
+      this.jsonUrl,
+      {observe: 'response'}
+    )
+    .pipe(
+      retry(3), // retry a failed request up to 3 times
+      tap( _ => this.log('fetched business organisations') ),
+      catchError(this.handleError)
+    );
   }
-
-  /*
-  private extractData(res: Response) {//Response object is returned from http.get()
-    let body = res.json();
-    return body;
-  }
-  */
 
   /**
    * Handle Http operation that failed.
@@ -87,6 +46,7 @@ export class BusOrganisationsService {
    * @param operation - name of the operation that failed
    * @param result - optional value to return as the observable result
    */
+  /*
   private handleError<T> (operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
 
@@ -100,6 +60,25 @@ export class BusOrganisationsService {
       return of(result as T);
     };
   }
+  */
+  private handleError(error: HttpErrorResponse) {
+    if (error.error instanceof ErrorEvent) {
+      // A client-side or network error occurred. Handle it accordingly.
+      console.error('An error occurred:', error.error.message);
+      //console.error('An client-side or network error occurred');
+    } else {
+      // The backend returned an unsuccessful response code.
+      // The response body may contain clues as to what went wrong,
+      console.error(
+        `Backend returned code ${error.status}, ` +
+        `body was: ${error.error}`);
+    }
+
+    // return an observable with a user-facing error message
+    return throwError(
+      'Something bad happened; please try again later.');
+  };
+
 
   /** Log a HeroService message with the MessageService */
   private log(message: string) {

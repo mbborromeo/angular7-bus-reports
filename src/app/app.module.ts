@@ -11,15 +11,15 @@ import { AppComponent } from './app.component';
 import { BusOrganisationsComponent } from './busOrganisations/busOrganisations.component';
 import { BusesComponent } from './buses/buses.component';
 import { MessagesComponent } from './messages/messages.component';
-import { DataComponent } from './data/data.component';
+//import { DataComponent } from './data/data.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BusOrganisationsComponent,
     BusesComponent,
-    MessagesComponent,
-    DataComponent
+    MessagesComponent
+    //DataComponent
   ],
   imports: [
     BrowserModule,

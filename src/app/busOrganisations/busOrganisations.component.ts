@@ -12,9 +12,10 @@ import { JsonFile, BusOrganisationsService } from '../bus-organisations.service'
 
 export class BusOrganisationsComponent implements OnInit {
   //dataImported: JsonFile;
-  busOrganisations: BusOrganisation[];
+  //busOrganisations: BusOrganisation[];
   headers: string[];
   jsonData: JsonFile;
+  //error: any;
 
   constructor(private busOrganisationsService: BusOrganisationsService) { }
 
@@ -25,55 +26,46 @@ export class BusOrganisationsComponent implements OnInit {
       .subscribe( busOrganisations => this.busOrganisations = busOrganisations );
   }
   */
+
   /*
   getBusOrganisations(): void {
-    console.log("busOrganisations.component.ts: getBusOrganisations() INSIDE");
-    debugger;
     this.busOrganisationsService.getBusOrganisations()
       // clone the data object, using its known BusOrganisation[] shape
       .subscribe(
-        //(data) => this.busOrganisations = { ...data.data }
-        //busOrganisations => this.busOrganisations = busOrganisations
         (dataObj: JsonFile) => this.dataImported = { ...dataObj.data }
       );
   }
   */
 
   /*
-  showData() {
+  getBusOrganisationsResponse() {
     console.log("busOrganisations.component - showData()")
     this.busOrganisationsService.getBusOrganisations()
       .subscribe(
-        // (d: JsonFile) => this.dataImported = {
-        //   data: d['data']
-        // }
         (data: JsonFile) => this.dataImported = { ...data }//, // success path
         //error => this.error = error // error path
       );
   }
   */
 
-  showDataResponse() {
+  getBusOrganisationsResponse() {
     this.busOrganisationsService.getBusOrganisationsResponse()
-      .subscribe(resp => { // resp is of type `HttpResponse<JsonFile>`
-        // display its headers
-        // const keys = resp.headers.keys();
-        // this.headers = keys.map(key =>
-        //   `${key}: ${resp.headers.get(key)}`);
+      .subscribe(
+        resp => { // resp is of type `HttpResponse<JsonFile>
+          // display its headers
+          // const keys = resp.headers.keys();
+          // this.headers = keys.map(key =>
+          //   `${key}: ${resp.headers.get(key)}`);
 
-        // access the body directly, which is typed as `JsonFile`.
-        this.jsonData = { ... resp.body }; //this.jsonData
-        this.busOrganisations = this.jsonData.data;
-      });
+          // access the body directly, which is typed as `JsonFile`.
+          this.jsonData = { ... resp.body };
+          //this.busOrganisations = this.jsonData.data;
+        }//,  success path
+        //error => this.error = error // error path
+      );
   }
 
-  /*
   ngOnInit() {
-    this.getBusOrganisations();
-  }
-  */
-  ngOnInit() {
-    console.log("busOrganisations.component - ngOnInit");
-    this.showDataResponse(); //showData
+    this.getBusOrganisationsResponse();
   }
 }
