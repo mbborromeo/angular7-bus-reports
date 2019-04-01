@@ -15,8 +15,6 @@ export interface JsonFile {
 })
 
 export class BusOrganisationsService {
-  //URL to web api: Define the busOrganisationsUrl of the form :base/:collectionName with the address of the busOrganisations resource on the server.
-  //Here base is the resource to which requests are made, and collectionName is the busOrganisations data object in the in-memory-data-service.ts.
   private jsonUrl = '../assets/bus-services-data.json';
 
   constructor(
