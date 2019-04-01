@@ -1,13 +1,13 @@
 
-<mat-accordion *ngIf="busOrganisations.length">
+<mat-accordion *ngIf="jsonData && jsonData.data && jsonData.data.length">
   <ul id="bus-report">
-    <li *ngFor="let bo of busOrganisations">
+    <li *ngFor="let busOrganisation of jsonData.data">
       <mat-expansion-panel>
         <mat-expansion-panel-header>
-          <h2>{{ bo.organisation }} - {{ bo.date }}</h2>
+          <h2>{{ busOrganisation.organisation }} - {{ busOrganisation.date }}</h2>
         </mat-expansion-panel-header>
 
-        <app-buses [busesWithinOrganisation]="bo.busData"></app-buses>
+        <app-buses [busesWithinOrganisation]="busOrganisation.busData"></app-buses>
       </mat-expansion-panel>
     </li>
   </ul>
