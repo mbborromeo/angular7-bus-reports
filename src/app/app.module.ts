@@ -5,10 +5,6 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { HttpClientModule } from '@angular/common/http';
 //import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 //import { InMemoryDataService }  from './in-memory-data.service';
-<<<<<<< HEAD
-import { FormsModule } from '@angular/forms'; //NgModel lives here
-=======
->>>>>>> 9f8a41545327575e06c0105e6b3960c212f7c549
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -34,10 +30,6 @@ import { MessagesComponent } from './messages/messages.component';
       InMemoryDataService, { dataEncapsulation: false }
     ),
     */
-<<<<<<< HEAD
-    FormsModule,
-=======
->>>>>>> 9f8a41545327575e06c0105e6b3960c212f7c549
     AppRoutingModule,
     BrowserAnimationsModule,
     MatExpansionModule
