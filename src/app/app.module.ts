@@ -10,13 +10,17 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BusOrganisationsComponent } from './busOrganisations/busOrganisations.component';
 import { BusesComponent } from './buses/buses.component';
+import { BusDetailComponent } from './bus-detail/bus-detail.component';
 import { MessagesComponent } from './messages/messages.component';
+import { DataComponent } from './data/data.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BusOrganisationsComponent,
     BusesComponent,
+    BusDetailComponent,
+    DataComponent,
     MessagesComponent
   ],
   imports: [
