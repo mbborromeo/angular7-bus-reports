@@ -1,0 +1,23 @@
+
+<span *ngIf="!jsonData || !jsonData.data">There was a problem reading or downloading the JSON file</span>
+
+<mat-accordion *ngIf="jsonData && jsonData.data && jsonData.data.length">
+  <ul id="bus-report">
+    <li *ngFor="let busOrganisation of jsonData.data">
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <h2>{{ busOrganisation.organisation }} - {{ busOrganisation.date }}</h2>
+        </mat-expansion-panel-header>
+
+        <app-buses [busesWithinOrganisation]="busOrganisation.busData"></app-buses>
+
+        <br /><br />
+        <!-- textarea -->
+        <input [(ngModel)]="busOrganisation.notes" placeholder="Enter notes here" />
+        <br />
+        <button>Save Notes</button>
+
+      </mat-expansion-panel>
+    </li>
+  </ul>
+</mat-accordion>

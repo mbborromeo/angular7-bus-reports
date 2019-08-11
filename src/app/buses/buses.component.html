@@ -1,0 +1,30 @@
+<table *ngIf="busesWithinOrganisation && busesWithinOrganisation.length">
+  <thead>
+    <tr>
+      <th class="busId">Bus ID</th>
+      <th class="route">Route Variant</th>
+      <th class="status">Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let b of busesWithinOrganisation">
+      <td>{{ b.busId }}</td>
+      <td>
+        <span *ngIf="b.routeVariant==='UNKNOWN'">
+          {{ b.routeVariant }}
+        </span>
+        <span *ngIf="b.routeVariant!='UNKNOWN'">
+          <b>{{ b.routeVariant | slice:0:3 }}</b>
+          {{ b.routeVariant | slice:4:5 }}
+          {{ b.routeVariant | slice:6:7 }}
+        </span>
+      </td>
+      <td>
+        <span *ngIf="b.deviationFromTimetable < 0" class="early">Early</span>
+        <span *ngIf="b.deviationFromTimetable >= 0 && b.deviationFromTimetable <= 300 && b.deviationFromTimetable != null" class="onTime">On Time</span>
+        <span *ngIf="b.deviationFromTimetable > 300" class="late">Late</span>
+        <span *ngIf="b.deviationFromTimetable == null" class="unknown">Unknown</span>
+      </td>
+    </tr>
+  </tbody>
+</table>
