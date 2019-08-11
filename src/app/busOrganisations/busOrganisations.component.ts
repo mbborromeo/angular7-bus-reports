@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { BusOrganisation } from '../busOrganisation';
 import { JsonFile, BusOrganisationsService } from '../bus-organisations.service';
+<<<<<<< HEAD
 import { InMemoryDbService } from 'angular-in-memory-web-api';
+=======
+>>>>>>> 9f8a41545327575e06c0105e6b3960c212f7c549
 
 @Component({
   selector: 'app-busOrganisations',

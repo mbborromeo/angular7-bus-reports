@@ -2,6 +2,7 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.6.  It is a Bus Report single-page app.
 
+<<<<<<< HEAD
 Technologies I used are: Angular 7, CSS and HTML.
 
 Cross-browser compatibility tested on: IE10+, Firefox and Chrome.
@@ -20,6 +21,10 @@ Install the project dependencies by typing in command-line:
 First install Angular CLI which allows you to run the 'ng' commands, by typing in the command-line:
 `npm install -g @angular/cli`
 
+=======
+## Development server
+
+>>>>>>> 9f8a41545327575e06c0105e6b3960c212f7c549
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
 ## Code scaffolding
@@ -30,6 +35,7 @@ Run `ng generate component component-name` to generate a new component. You can 
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
+<<<<<<< HEAD
 The next steps were sourced from the site:
 https://angular.io/guide/deployment
 
@@ -44,6 +50,8 @@ On the GitHub project page, configure it to publish from the 'docs' folder.
 Once this deployment has been done, the live preview of the site can be viewed at:
 
 
+=======
+>>>>>>> 9f8a41545327575e06c0105e6b3960c212f7c549
 ## Running unit tests
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).

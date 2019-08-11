@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ASSUMPTIONS MADE:
 -----------------
 
@@ -8,3 +9,15 @@ of each bus in the bus-services-data.json file assuming the following rules belo
 "On Time":  >= 0 AND <= 300
 "Late":     > 300
 "Unknown":  null
+=======
+ASSUMPTIONS MADE:
+-----------------
+
+The 'Status' value in the Bus Reports table is based on the 'deviationFromTimetable' values
+of each bus in the bus-services-data.json file assuming the following rules below:
+
+"Early":    < 0
+"On Time":  >= 0 AND <= 300
+"Late":     > 300
+"Unknown":  null
+>>>>>>> 9f8a41545327575e06c0105e6b3960c212f7c549

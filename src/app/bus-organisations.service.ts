@@ -7,7 +7,10 @@ import { BusOrganisation } from './busOrganisation';
 import { MessageService } from './message.service';
 
 export interface JsonFile {
+<<<<<<< HEAD
   //initialise data
+=======
+>>>>>>> 9f8a41545327575e06c0105e6b3960c212f7c549
   data: BusOrganisation[];
 }
 
@@ -53,6 +56,10 @@ export class BusOrganisationsService {
       'Something bad happened; please try again later.');
   };
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 9f8a41545327575e06c0105e6b3960c212f7c549
   //Log a bus-organisations Service message with the MessageService
   private log(message: string) {
     this.messageService.add(`BusOrganisationsService: ${message}`);

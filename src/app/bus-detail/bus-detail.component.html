@@ -1,0 +1,30 @@
+<table>
+  <thead>
+    <tr>
+      <th class="busId">Bus ID</th>
+      <th class="route">Route Variant</th>
+      <th class="status">Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let bd of busDataArray">
+      <td>{{ bd.busId }}</td>
+      <td>
+        <span *ngIf="bd.routeVariant==='UNKNOWN'">
+          {{ bd.routeVariant }}
+        </span>
+        <span *ngIf="bd.routeVariant!='UNKNOWN'">
+          <b>{{ bd.routeVariant | slice:0:3 }}</b>
+          {{ bd.routeVariant | slice:4:5 }}
+          {{ bd.routeVariant | slice:6:7 }}
+        </span>
+      </td>
+      <td>
+        <span *ngIf="bd.deviationFromTimetable < 0" class="early">Early</span>
+        <span *ngIf="bd.deviationFromTimetable >= 0 && bd.deviationFromTimetable <= 300 && bd.deviationFromTimetable != null" class="onTime">On Time</span>
+        <span *ngIf="bd.deviationFromTimetable > 300" class="late">Late</span>
+        <span *ngIf="bd.deviationFromTimetable == null" class="unknown">Unknown</span>
+      </td>
+    </tr>
+  </tbody>
+</table>

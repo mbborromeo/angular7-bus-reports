@@ -1,6 +1,9 @@
 
+<<<<<<< HEAD
 <span *ngIf="!jsonData || !jsonData.data">There was a problem reading or downloading the JSON file</span>
 
+=======
+>>>>>>> 9f8a41545327575e06c0105e6b3960c212f7c549
 <mat-accordion *ngIf="jsonData && jsonData.data && jsonData.data.length">
   <ul id="bus-report">
     <li *ngFor="let busOrganisation of jsonData.data">
@@ -10,6 +13,7 @@
         </mat-expansion-panel-header>
 
         <app-buses [busesWithinOrganisation]="busOrganisation.busData"></app-buses>
+<<<<<<< HEAD
 
         <br /><br />
         <!-- textarea -->
@@ -17,6 +21,8 @@
         <br />
         <button>Save Notes</button>
 
+=======
+>>>>>>> 9f8a41545327575e06c0105e6b3960c212f7c549
       </mat-expansion-panel>
     </li>
   </ul>
