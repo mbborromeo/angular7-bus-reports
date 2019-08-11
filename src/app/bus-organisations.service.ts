@@ -15,7 +15,7 @@ export interface JsonFile {
 })
 
 export class BusOrganisationsService {
-  private jsonUrl = './assets/bus-services-data.json';
+  private jsonUrl = '../assets/bus-services-data.json';
 
   constructor(
     private http: HttpClient,

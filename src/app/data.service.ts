@@ -9,7 +9,7 @@ import { BusOrganisation } from './busOrganisation';
 })
 
 export class DataService {
-  jsonUrl = './assets/bus-services-data.json';
+  jsonUrl = '../assets/bus-services-data.json';
 
   constructor(private http: HttpClient) { }
 
