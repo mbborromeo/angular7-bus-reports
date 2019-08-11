@@ -2,7 +2,7 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.6.  It is a Bus Report single-page app.
 
-Technologies I used are: Angular 7, Flickr API, CSS, and HTML5 Boilerplate v6.0.1/Modernizr.
+Technologies I used are: Angular 7, CSS and HTML.
 
 Cross-browser compatibility tested on: IE10+, Firefox and Chrome.
 
