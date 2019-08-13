@@ -41,8 +41,6 @@ Commit your changes on Git and push.
 
 On the GitHub project page, configure it to publish from the 'docs' folder.
 
-Once this deployment has been done, the live preview of the site can be viewed at:
-https://mbborromeo.github.io/angular7-bus-reports/
 
 ## Running unit tests
 
